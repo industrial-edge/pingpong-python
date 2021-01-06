@@ -1,0 +1,27 @@
+version: "2.4"
+
+services:
+    pingpong-python:
+        build: .
+        image: ping-pong-python:1.0.0
+        environment:
+            - TOPIC_1=topic1
+            - TOPIC_2=topic2
+            # Databus service in network is called ie_databus but will be probably changed in Industrial Edge 1.1
+            - MQTT_IP=ie_databus
+            - MQTT_USER=edge
+            - MQTT_PASSWORD=edge
+        mem_limit: 300mb
+        volumes:
+            - './publish/:/publish/'
+            - './cfg-data/:/cfg-data/'
+        # Network of system apps
+        networks:
+            - proxy-redirect
+    ie_databus: # note that the underscore will be removed in the future
+        image: eclipse-mosquitto
+        networks:
+            - proxy-redirect
+networks:
+    proxy-redirect:
+
