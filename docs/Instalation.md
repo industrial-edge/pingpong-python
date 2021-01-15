@@ -39,7 +39,7 @@ Installed following components
 
 ## Upload App to the Industrial Edge Management
 
-Please find below a short description how to publish your application in your IEM.
+Please find below a short description how to publish your application in your IEM. More comprehensive how-to is in this [repository](https://github.com/industrial-edge/upload-app-to-industrial-edge-management)
 
 - Connect your IEAP to your Industrial Edge Management (IEM) System
 - Create a new application in IEM
