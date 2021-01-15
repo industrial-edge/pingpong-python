@@ -2,7 +2,7 @@ version: "2.4"
 
 services:
     pingpong-python:
-        build: .
+        build: ./src/
         image: ping-pong-python:1.0.0
         environment:
             - TOPIC_1=topic1

@@ -1,8 +1,8 @@
-version: "2.4"
+# Docker compose that can be imported to Industrial Edge App Publisher (IEAP)
 
+version: "2.4"
 services:
     pingpong-python:
-        build: .
         image: ping-pong-python:1.0.0
         environment: # We recommend using cfg-data folder and load config from file rather than environment variables
             - TOPIC_1=topic1
