@@ -1,6 +1,6 @@
 # Ping Pong Edge application implemented in Python
 
-Application example how to communicate over MQTT broker (called Databus in case of Industrial Edge).
+Application example how to communicate over MQTT broker (called Databus in case of Industrial Edge) using IE Flow Creator ([NodeRED fork](https://nodered.org/)) and Python.
 
 - [Ping Pong Edge application implemented in Python](#ping-pong-edge-application-implemented-in-python)
   - [Description](#description)
@@ -11,6 +11,8 @@ Application example how to communicate over MQTT broker (called Databus in case 
     - [Direct Import](#direct-import)
     - [Manual Build](#manual-build)
   - [Usage](#usage)
+    - [Dependencies](#dependencies)
+    - [Playing ping pong](#playing-ping-pong)
   - [Documentation](#documentation)
   - [Contribution](#contribution)
   - [Licence and Legal Information](#licence-and-legal-information)
@@ -23,7 +25,7 @@ This application example demonstrates how Industrial Edge application can commun
 
 ### Overview
 
-Ready to use application example can be downloaded on [Industrial Edge GitHub repository](https://github.com/industrial-edge/Ping-Pong-Python) in the [releases section](https://github.com/industrial-edge/Ping-Pong-Python/releases). This .app file can be directly imported to your Industrial Edge Management system.
+Ready to use application example can be downloaded on [Industrial Edge GitHub repository](https://github.com/industrial-edge/ping-pong-python) in the [releases section](https://github.com/industrial-edge/ping-pong-python/releases) called PingPongApplicationExample_x.x.x.app.zip. After unzipping this file you can directly import the .app file to your Industrial Edge Management system.
 
 The release section also includes a docker base image that was used for this application example. The base image is included here for legal reasons.
 
@@ -59,23 +61,27 @@ You have two options how to install this app into Industrial Edge Management sys
 
 ### Direct Import
 
-1. Import .app application available at [GitHub](https://github.com/industrial-edge/Ping-Pong-Python/releases) to your Industrial Edge Management using one of the two options
+1. Import .app application available at [GitHub](https://github.com/industrial-edge/ping-pong-python/releases) to your Industrial Edge Management using one of the two options
    1. Industrial Edge App Publisher (recommended)
    2. Catalog import functionality
 2. Install the imported app to onboarded Industrial Edge Device
 
-In case you would like to build the application from source code the [Instalation](docs/Instalation.md) provides comprehensive guide how to do that.
-
 ### Manual Build
 
-1. Clone this repo
-2. Run docker-compose up to build the images and save them in your local docker registry
-3. Create new Application in your IEM
-4. Use Industrial Edge App Publisher (IEAP) to create new version of the newly created app
-5. Use the "Import Yaml" feature of IEAP and import the [docker-compose.prod.yaml](docker-compose.prod.yml) file
-6. Finalize your app and upload it to IEM
+More comprehensive instructions for building and installing this application is available in the [Instalation guide](docs/Instalation.md).
 
 ## Usage
+
+### Dependencies
+
+In order for this application to run properly on Industrial Edge Device (IED), the following two applications must be installed and configured on the IED
+
+- Databus application
+- IE Flow Creator application
+
+For detailed explanation have a look at the [Instalation guide](docs/Instalation.md).
+
+### Playing ping pong
 
 1. Navigate to IED web interface home page
 2. Open IE Flow Creator UI
@@ -108,4 +114,4 @@ Thanks for your interest in contributing. Anybody is free to report bugs, unclea
 
 ## Licence and Legal Information
 
-Please read the [Legal information](LICENSE.md).
+Please read the [Legal information](LICENSE.md) and [Readme_OSS.html](ReadMe_OSS.html).
