@@ -8,7 +8,7 @@ Application example how to communicate over MQTT broker (called Databus in case 
   - [Requirements](#requirements)
     - [Used components](#used-components)
   - [Installation](#installation)
-    - [Direct Import](#direct-import)
+    - [Direct Import steps](#direct-import-steps)
     - [Manual Build](#manual-build)
   - [Usage](#usage)
     - [Dependencies](#dependencies)
@@ -59,7 +59,7 @@ This application was created and tested using these components
 
 You have two options how to install this app into Industrial Edge Management system. You can either use the [Direct Import section](#direct-import) to use .app we build for you or you can follow the [Manual Build](#manual-build) section to build the .app yourself.
 
-### Direct Import
+### Direct Import steps
 
 1. Import .app application available at [GitHub](https://github.com/industrial-edge/ping-pong-python/releases) to your Industrial Edge Management using one of the two options
    1. Industrial Edge App Publisher (recommended)
@@ -68,7 +68,7 @@ You have two options how to install this app into Industrial Edge Management sys
 
 ### Manual Build
 
-More comprehensive instructions for building and installing this application is available in the [Instalation guide](docs/Instalation.md).
+More comprehensive instructions for building and installing this application is available in the [Installation guide](docs/Instalation.md).
 
 ## Usage
 
@@ -79,7 +79,7 @@ In order for this application to run properly on Industrial Edge Device (IED), t
 - Databus application
 - IE Flow Creator application
 
-For detailed explanation have a look at the [Instalation guide](docs/Instalation.md).
+For detailed explanation have a look at the [Installation guide](docs/Instalation.md).
 
 ### Playing ping pong
 
