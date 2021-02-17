@@ -1,14 +1,13 @@
-# Docker compose that can be imported to Industrial Edge App Publisher (IEAP)
+# Docker compose that can be imported to Industrial Edge App Publisher (IEAP) but first build it with docker-compose.yml
 
 version: "2.4"
 services:
     pingpong-python:
-        image: ping-pong-python:1.0.0
+        image: ping-pong-python:1.1.0
         environment: # We recommend using cfg-data folder and load config from file rather than environment variables
             - TOPIC_1=topic1
             - TOPIC_2=topic2
-            # Databus service in network is called ie_databus but will be probably changed in Industrial Edge 1.1
-            - MQTT_IP=ie_databus
+            - MQTT_IP=ie-databus # Databus name has changed in Industrial Edge 1.1
             - MQTT_USER=edge
             - MQTT_PASSWORD=edge
         mem_limit: 300mb

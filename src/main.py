@@ -1,8 +1,8 @@
-# Simple demonstation of MQTT functionality in python for edge apps.
 # Copyright 2020 Siemens AG
 # This file is subject to the terms and conditions of the MIT License.  
 # See LICENSE file in the top-level directory
-# Date: 30.11.2020
+
+# Simple demonstation of MQTT functionality in python for edge apps.
 
 import paho.mqtt.client as mqtt
 import os
@@ -68,7 +68,7 @@ client.username_pw_set(os.environ['MQTT_USER'],os.environ['MQTT_PASSWORD'])
 client.on_message = on_message
 client.on_connect = on_connect
 #MQTT_IP must contain the service name of the databus app of the device
-client.connect(os.environ['MQTT_IP'])
+client.connect(MQTT_IP)
 #clients always waits for messages
 client.loop_forever()
 
