@@ -1,0 +1,184 @@
+[
+    {
+        "id": "cd02c1b1.e5539",
+        "type": "tab",
+        "label": "PingPong Test",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "28f15183.6df22e",
+        "type": "inject",
+        "z": "cd02c1b1.e5539",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Ping",
+        "payloadType": "str",
+        "x": 450,
+        "y": 180,
+        "wires": [
+            [
+                "a7b5026b.7018c"
+            ]
+        ]
+    },
+    {
+        "id": "5357c931.64e9d8",
+        "type": "inject",
+        "z": "cd02c1b1.e5539",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Pong",
+        "payloadType": "str",
+        "x": 450,
+        "y": 240,
+        "wires": [
+            [
+                "a7b5026b.7018c"
+            ]
+        ]
+    },
+    {
+        "id": "d34cbaff.a45528",
+        "type": "inject",
+        "z": "cd02c1b1.e5539",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Something else",
+        "payloadType": "str",
+        "x": 420,
+        "y": 300,
+        "wires": [
+            [
+                "a7b5026b.7018c"
+            ]
+        ]
+    },
+    {
+        "id": "a7b5026b.7018c",
+        "type": "mqtt out",
+        "z": "cd02c1b1.e5539",
+        "name": "",
+        "topic": "topic1",
+        "qos": "",
+        "retain": "",
+        "broker": "f9797e4b.7d9c9",
+        "x": 610,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "be36003a.4e936",
+        "type": "mqtt in",
+        "z": "cd02c1b1.e5539",
+        "name": "",
+        "topic": "topic2",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "f9797e4b.7d9c9",
+        "x": 390,
+        "y": 440,
+        "wires": [
+            [
+                "9618c676.7e2158"
+            ]
+        ]
+    },
+    {
+        "id": "9618c676.7e2158",
+        "type": "debug",
+        "z": "cd02c1b1.e5539",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "23479def.67eba2",
+        "type": "comment",
+        "z": "cd02c1b1.e5539",
+        "name": "publish different data to topic on databus",
+        "info": "",
+        "x": 480,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "227e2d39.73b9e2",
+        "type": "comment",
+        "z": "cd02c1b1.e5539",
+        "name": "subscribe to topic on databus to receive answer",
+        "info": "",
+        "x": 500,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f9797e4b.7d9c9",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "ie_databus",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    }
+]
