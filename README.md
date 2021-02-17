@@ -21,7 +21,7 @@ Application example how to communicate over MQTT broker (called Databus in case 
 
 ## QuickStart
 
-If you want to run everything localy with single commmand just run `docker-compose up -d` and open webpage on [lohahost:1880](http://localhost:1880) and import [flows](SFC-flows/Pingpong-testing.json).
+If you want to run everything locally with single command just run `docker-compose up -d` and open webpage on [localhost:1880](http://localhost:1880) and import [flows](SFC-flows/Pingpong-testing.json).
 
 ## Description
 
@@ -75,7 +75,7 @@ You have two options how to install this app into Industrial Edge Management sys
 
 ### Complete Installation
 
-Commprehensive instructions for building and installing this application is available in the [Installation guide](docs/Installation.md).
+Comprehensive instructions for building and installing this application is available in the [Installation guide](docs/Installation.md).
 
 ## Usage
 

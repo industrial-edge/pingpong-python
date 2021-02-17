@@ -66,13 +66,13 @@ If no configuration is provided (e.g if the app is deployed as a standalone appl
 
 To create a configuration for the application follow these steps:
 
-- Open the "Applications" -> "My Projects" Tab in the Industrial Edge Management Webinterface
+- Open the "Applications" -> "My Projects" Tab in the Industrial Edge Management web interface
 - Click on your PingPong application
 - Click on "Configurations" and "Add Configuration"
 - Enter a Name and Description. Enter `./cfg-data` as host path. Check the "versioned" Checkbox and click "Add"
 - Click on the "+" Button to add a new version of the configuration
 - Enter a Name and Description. Browse for the `mqtt-config.json` file in the `cfg-data` folder of this repository.
-- Click on the pencil button next to the version to verify that all paramters are set correctly.
+- Click on the pencil button next to the version to verify that all parameters are set correctly.
 
 ![Add new configuration](./graphics/pythonpingpong-new-configuration.gif)
 
@@ -97,7 +97,7 @@ Industrial Edge Management Web interface:
 - Click on the application under the "Applications"->"My Projects" Tab
 - Click on the install button of the version you want to deploy
 - Select the application configuration and the version of the configuration
-- Select the corresponing Industrial Edge Device
+- Select the corresponding Industrial Edge Device
 - Click "Install Now" and wait for the job to be finished successfully
 
 ![Deploy App to IE Device](./graphics/pythonpingpong-deploy-app-to-ied.gif)
@@ -106,7 +106,7 @@ When the pingpong application is deployed and running on the Industrial Edge Dev
 
 # Testing the application using Simatic Flow Creator
 
-- Open the Webinterface of the Simatic Flow Creator
+- Open the web interface of the Simatic Flow Creator
 - Connect a "inject" node with a "mqtt out" node
 - Connect a "mqtt in" node with a "debug" node
 - Configure the mqtt-nodes to connect to the databus. Enter the hostname, username and password
