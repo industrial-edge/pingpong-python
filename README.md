@@ -90,21 +90,7 @@ For detailed explanation have a look in the [Installation guide](docs/Installati
 
 ### Playing ping pong
 
-1. Navigate to IED web interface home page
-2. Open IE Flow Creator UI
-3. Create MQTT Input node in Flow Creator
-4. Configure MQTT Broker
-   1. IP address is "ie_databus", port is 1883, password and user must be configured by you in advance
-5. As topic write "topic2" to node
-6. Deploy the flow to check whether the connection is working. You should see green "connected" indicator after deploying
-7. Repeat the same process for MQTT output node
-8. Use Inject node as input to MQTT output node. Input text message should be "Ping"
-9. Use Debug node as output to MQTT input node
-10. Click on Inject to send message to broker. In the debug window you should see response.
-
-The end flow should look like this.
-
-![flow](docs/graphics/PingPongFlowCreator.png)
+Have a look in the [Installation guide testing section](docs/Installation.md) on how to play ping pong in Industrial Edge. :D
 
 ## Documentation
   
