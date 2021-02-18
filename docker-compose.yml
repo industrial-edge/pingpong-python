@@ -1,14 +1,14 @@
-version: "2.4"
+# Use this docker-compose as a one-click start for demo -> simply run "docker-compose up -d" and see logs of python container that it is connected
 
+version: "2.4"
 services:
     pingpong-python:
         build: ./src/
-        image: ping-pong-python:1.0.0
+        image: ping-pong-python:1.1.0
         environment:
             - TOPIC_1=topic1
             - TOPIC_2=topic2
-            # Databus service in network is called ie_databus but will be probably changed in Industrial Edge 1.1
-            - MQTT_IP=ie_databus
+            - MQTT_IP=ie-databus
             - MQTT_USER=edge
             - MQTT_PASSWORD=edge
         mem_limit: 300mb
@@ -18,8 +18,15 @@ services:
         # Network of system apps
         networks:
             - proxy-redirect
-    ie_databus: # note that the underscore will be removed in the future
-        image: eclipse-mosquitto
+    ie-databus: # For local development purposes. Note that preffered databus name changed from 1.0 to 1.1. Legacy old name is "ie_databus".
+        image: eclipse-mosquitto:1.6
+        networks:
+            - proxy-redirect
+
+    nodered:
+        image: nodered/node-red
+        ports: 
+            - 1880:1880
         networks:
             - proxy-redirect
 networks:

@@ -1,21 +1,27 @@
 # Ping Pong Edge application implemented in Python
 
-Application example how to communicate over MQTT broker (called Databus in case of Industrial Edge) using IE Flow Creator ([NodeRED fork](https://nodered.org/)) and Python.
+Application example how to communicate over MQTT broker (called Databus in case of Industrial Edge) using IE Flow Creator and Python.
 
 - [Ping Pong Edge application implemented in Python](#ping-pong-edge-application-implemented-in-python)
+  - [QuickStart](#quickstart)
   - [Description](#description)
     - [Overview](#overview)
   - [Requirements](#requirements)
     - [Used components](#used-components)
+    - [Further requirements](#further-requirements)
   - [Installation](#installation)
     - [Direct Import steps](#direct-import-steps)
-    - [Manual Build](#manual-build)
+    - [Complete Installation](#complete-installation)
   - [Usage](#usage)
     - [Dependencies](#dependencies)
     - [Playing ping pong](#playing-ping-pong)
   - [Documentation](#documentation)
   - [Contribution](#contribution)
   - [Licence and Legal Information](#licence-and-legal-information)
+
+## QuickStart
+
+If you want to run everything locally with single command just run `docker-compose up -d` and open webpage on [localhost:1880](http://localhost:1880) and import [flows](SFC-flows/Pingpong-testing.json).
 
 ## Description
 
@@ -35,29 +41,29 @@ A picture bellow shows the application data flow and architecture from the docke
 
 ## Requirements
 
-In order for this use case to work the following apps needs to be present and configured on the Edge device
-
-- IE Databus
-- IE Flow Creator (Can be replaced by any app that can send, receive and display MQTT messages)
-- IEM ready to deploy app
-- One available onboarded IE Device with enough memory available
-- Configured user and user rights on the Databus MQTT broker
-
 ### Used components
 
-This application was created and tested using these components
+This application version 1.1.x was created and tested using these components
 
-- Industrial Edge App Publisher V1.0.8
-- Docker Engine 19.03.8
+- Industrial Edge App Publisher V1.1.5
+- Docker Engine 20.10.2
 - Docker Compose V2.4
-- IE Databus V 1.0.11
-- IE Flow Creator V 1.0.4
-- Industrial Edge Management Version 1.0.11
-- Industrial Edge Device V 1.0.0-34
+- Industrial Edge Device V1.1.0-39
+- IE Databus Configurator V1.1.44
+- IE Databus V1.1.23
+- IE Flow Creator V1.0.4
+- IE Management System V1.1.0-48
+
+### Further requirements
+
+- IE Device is onboarded to a IE Management
+- IE Databus Configurator is deployed to the IE Management
+- IE Databus is deployed to the IE Device
+- IE Flow Creator is deployed to the IE Device
 
 ## Installation
 
-You have two options how to install this app into Industrial Edge Management system. You can either use the [Direct Import section](#direct-import) to use .app we build for you or you can follow the [Manual Build](#manual-build) section to build the .app yourself.
+You have two options how to install this app into Industrial Edge Management system. You can either use the [Direct Import section](#direct-import) to reuse .app we build for you or you can follow the [Complete Installation](#complete-installation) section to create the .app yourself.
 
 ### Direct Import steps
 
@@ -65,10 +71,11 @@ You have two options how to install this app into Industrial Edge Management sys
    1. Industrial Edge App Publisher (recommended)
    2. Catalog import functionality
 2. Install the imported app to onboarded Industrial Edge Device
+3. Follow the configuration steps in [Installation guide](docs/Installation.md).
 
-### Manual Build
+### Complete Installation
 
-More comprehensive instructions for building and installing this application is available in the [Installation guide](docs/Instalation.md).
+Comprehensive instructions for building and installing this application is available in the [Installation guide](docs/Installation.md).
 
 ## Usage
 
@@ -79,25 +86,11 @@ In order for this application to run properly on Industrial Edge Device (IED), t
 - Databus application
 - IE Flow Creator application
 
-For detailed explanation have a look at the [Installation guide](docs/Instalation.md).
+For detailed explanation have a look in the [Installation guide](docs/Installation.md) in the Testing section.
 
 ### Playing ping pong
 
-1. Navigate to IED web interface home page
-2. Open IE Flow Creator UI
-3. Create MQTT Input node in Flow Creator
-4. Configure MQTT Broker
-   1. IP address is "ie_databus", port is 1883, password and user must be configured by you in advance
-5. As topic write "topic2" to node
-6. Deploy the flow to check whether the connection is working. You should see green "connected" indicator after deploying
-7. Repeat the same process for MQTT output node
-8. Use Inject node as input to MQTT output node. Input text message should be "Ping"
-9. Use Debug node as output to MQTT input node
-10. Click on Inject to send message to broker. In the debug window you should see response.
-
-The end flow should look like this.
-
-![flow](docs/graphics/PingPongFlowCreator.png)
+Have a look in the [Installation guide testing section](docs/Installation.md) on how to play ping pong in Industrial Edge. :D
 
 ## Documentation
   
