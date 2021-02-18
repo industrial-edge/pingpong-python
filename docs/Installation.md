@@ -46,6 +46,7 @@ To configure the databus topics, username and password of the pingpong applicati
 
 - "MQTT_USER": username of user in databus, must exist
 - "MQTT_PASSWORD": password of user in databus
+- "MQTT_IP": name of the databus service name (serve as DNS resolution)
 - "TOPIC_1": databus topic to which the app subscribes to
 - "TOPIC_2": databus topic to which the app publishes to
 
@@ -55,6 +56,7 @@ The configuration file has to be named `mqtt-config.json` and has to be structur
 {
     "MQTT_USER":"edge",
     "MQTT_PASSWORD":"edge",
+    "MQTT_IP":"ie-databus",
     "TOPIC_1":"topic1",
     "TOPIC_2":"topic1"
 }
