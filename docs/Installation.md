@@ -2,23 +2,23 @@
 # Installation of the PingPong application
 
 - [Installation of the PingPong application](#installation-of-the-pingpong-application)
-- [Build application](#build-application)
-  - [Cloning the repository](#cloning-the-repository)
-  - [Build docker image](#build-docker-image)
-- [Upload the app to the Industrial Edge Management](#upload-the-app-to-the-industrial-edge-management)
-- [Configuring and deploying the app to a Industrial Edge Device](#configuring-and-deploying-the-app-to-a-industrial-edge-device)
-  - [Creating a configuration for the application](#creating-a-configuration-for-the-application)
-  - [Configuring the Industrial Edge Databus](#configuring-the-industrial-edge-databus)
-  - [Installing the application to a Industrial Edge Device](#installing-the-application-to-a-industrial-edge-device)
-- [Testing the application using Simatic Flow Creator](#testing-the-application-using-simatic-flow-creator)
+  - [Build application](#build-application)
+    - [Cloning the repository](#cloning-the-repository)
+    - [Build docker image](#build-docker-image)
+  - [Upload the app to the Industrial Edge Management](#upload-the-app-to-the-industrial-edge-management)
+  - [Configuring and deploying the app to a Industrial Edge Device](#configuring-and-deploying-the-app-to-a-industrial-edge-device)
+    - [Creating a configuration for the application](#creating-a-configuration-for-the-application)
+    - [Configuring the Industrial Edge Databus](#configuring-the-industrial-edge-databus)
+    - [Installing the application to a Industrial Edge Device](#installing-the-application-to-a-industrial-edge-device)
+  - [Testing the application using Simatic Flow Creator](#testing-the-application-using-simatic-flow-creator)
 
-# Build application
+## Build application
 
-## Cloning the repository
+### Cloning the repository
 
 - Clone or Download the source code to your engineering VM
 
-## Build docker image
+### Build docker image
 
 - Open a console in the root directory of this repo
 - Use command `docker-compose build` to build the docker image.
@@ -32,15 +32,15 @@ You should see a similar result to this:
 
 ![Check for docker image](./graphics/docker-images-grep.png)
 
-# Upload the app to the Industrial Edge Management
+## Upload the app to the Industrial Edge Management
 
 Please refer to [Uploading App to IEM](https://github.com/industrial-edge/upload-app-to-industrial-edge-management) on how to upload the app to the IEM. For importing the configuration in the IE publisher use the [docker-compose.prod.yml](../docker-compose.prod.yml) file please.
 
-# Configuring and deploying the app to a Industrial Edge Device
+## Configuring and deploying the app to a Industrial Edge Device
 
 Before deploying to a Industrial Edge Device, a configuration for the application has to be created ans the Industrial Edge Databus has to be configured.
 
-## Creating a configuration for the application
+### Creating a configuration for the application
 
 To configure the databus topics, username and password of the pingpong application, a new configuration for the application has to be created in the Industrial Edge Management. The following parameters are required by the application:
 
@@ -78,7 +78,7 @@ To create a configuration for the application follow these steps:
 
 ![Add new configuration](./graphics/pythonpingpong-new-configuration.gif)
 
-## Configuring the Industrial Edge Databus
+### Configuring the Industrial Edge Databus
 
 To be able to authenticate with the databus to publish and subscribe to the configured topics, the Industrial Edge Databus has to be configured appropriately.
 
@@ -90,7 +90,7 @@ To be able to authenticate with the databus to publish and subscribe to the conf
 
 ![IE databus configuration](./graphics/ie-databus-config.gif)
 
-## Installing the application to a Industrial Edge Device
+### Installing the application to a Industrial Edge Device
 
 As soon as a configuration for the application is created and the Industrial Edge Databus is configured, the app can be installed to an Industrial Edge Device.
 
@@ -106,7 +106,7 @@ Industrial Edge Management Web interface:
 
 When the pingpong application is deployed and running on the Industrial Edge Device, it can be tested using the Simatic Flow Creator.
 
-# Testing the application using Simatic Flow Creator
+## Testing the application using Simatic Flow Creator
 
 - Open the web interface of the Simatic Flow Creator
 - Connect a "inject" node with a "mqtt out" node
