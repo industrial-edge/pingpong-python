@@ -54,7 +54,7 @@ A picture bellow shows the application data flow and architecture from the docke
 
 This application version 1.1.x was created and tested using these components
 
-- Industrial Edge App Publisher V1.1.5
+- Industrial Edge App Publisher V1.1.4
 - Docker Engine 20.10.2
 - Docker Compose V2.4
 - Industrial Edge Device V1.1.0-39
