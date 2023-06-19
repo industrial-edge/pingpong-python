@@ -3,7 +3,7 @@
 
 - [Installation of the PingPong application](#installation-of-the-pingpong-application)
   - [Build application](#build-application)
-    - [Cloning the repository](#cloning-the-repository)
+    - [Download Repository](#download-repository)
     - [Build docker image](#build-docker-image)
   - [Upload the app to the Industrial Edge Management](#upload-the-app-to-the-industrial-edge-management)
   - [Configuring and deploying the app to a Industrial Edge Device](#configuring-and-deploying-the-app-to-a-industrial-edge-device)
@@ -14,23 +14,29 @@
 
 ## Build application
 
-### Cloning the repository
+### Download Repository
 
-- Clone or Download the source code to your engineering VM
+Download or clone the repository source code to your workstation.  
+![Github Clone Section](graphics/clonerepo.png)
+
+
+* Trough terminal:
+```bash
+git clone https://github.com/industrial-edge/hello-world.git
+```
+
+* Trough VSCode:  
+<kbd>CTRL</kbd>+<kbd>&uarr; SHIFT</kbd>+<kbd>P</kbd> or <kbd>F1</kbd> to open VSCode's command pallette and type `git clone`:
+
+![VS Code Git Clone command](graphics/git.png)
 
 ### Build docker image
 
-- Open a console in the root directory of this repo
-- Use command `docker-compose build` to build the docker image.
-- This docker image can now be used to build you app with the Industrial Edge App Publisher
-
-![Build docker image](./graphics/docker-compose-build-python.png)
-
-- After building, use `docker images | grep <image_name>` to check if the image was build correctly. For example, the name of the python image is `pingpong_python`
-
-You should see a similar result to this:
-
-![Check for docker image](./graphics/docker-images-grep.png)
+- Navigate into `src` and find the file named `Dockerfile.example`. The `Dockerfile.example` is an example Dockerfile that can be used to build the Docker images of the backend and the frontend. If you choose to use these, rename them both to `Dockerfile` before proceeding
+- Open a console in the root folder (where the `docker-compose` file is)
+- Use the `docker compose build` (replaces the older `docker-compose build`) command to build the docker image of the service which is specified in the docker-compose.yml file.
+- These Docker images can now be used to build your app with the Industrial Edge App Publisher
+- `docker images` can be used to check for the images
 
 ## Upload the app to the Industrial Edge Management
 
