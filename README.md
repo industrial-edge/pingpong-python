@@ -61,7 +61,7 @@ This application version 1.1.x was created and tested using these components
 - Industrial Edge Device V1.10.0-9
 - Databus Configurator V1.1.44
 - Databus V1.1.23
-- IE Flow Creator V1.12.0-1
+- Flow Creator V1.12.0-1
 - IE Management System V1.5.2-4
 
 ### Further requirements
@@ -94,7 +94,7 @@ Comprehensive instructions for building and installing this application is avail
 In order for this application to run properly on Industrial Edge Device (IED), the following two applications must be installed and configured on the IED
 
 - Databus application
-- IE Flow Creator application
+- Flow Creator application
 
 For detailed explanation have a look in the [Installation guide](docs/Installation.md) in the Testing section.
 
