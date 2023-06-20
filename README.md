@@ -59,8 +59,8 @@ This application version 1.1.x was created and tested using these components
 - Docker Engine 20.10.2
 - Docker Compose V2.4
 - Industrial Edge Device V1.10.0-9
-- Databus Configurator V1.1.44
-- Databus V1.1.23
+- Databus Configurator V2.0.0-5
+- Databus V2.0.0-4
 - Flow Creator V1.12.0-1
 - IE Management System V1.5.2-4
 
