@@ -1,6 +1,6 @@
 # Ping Pong Edge application implemented in Python
 
-Application example how to communicate over MQTT broker (called Databus in case of Industrial Edge) using IE Flow Creator and Python.
+Application example how to communicate over MQTT broker (called Databus in case of Industrial Edge) using Flow Creator and Python.
 
 There are also implementations in other programming languages, you can find them in their own repositories:
 
