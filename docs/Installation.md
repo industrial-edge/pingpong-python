@@ -68,7 +68,7 @@ The configuration file has to be named `mqtt-config.json` and has to be structur
 }
 ```
 
-In the example above, the app will authenticate to the IE databus with the username `edge` and password `edge`. It will subscribe to `topic1` and will publish to `topic2`.
+In the example above, the app will authenticate to the databus with the username `edge` and password `edge`. It will subscribe to `topic1` and will publish to `topic2`.
 
 If no configuration is provided (e.g if the app is deployed as a standalone application), the application will use the corresponding environmental variables specified in the `docker-compose.yml` file.
 
