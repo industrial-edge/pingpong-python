@@ -10,7 +10,7 @@
     - [Creating a configuration for the application](#creating-a-configuration-for-the-application)
     - [Configuring the Industrial Edge Databus](#configuring-the-industrial-edge-databus)
     - [Installing the application to a Industrial Edge Device](#installing-the-application-to-a-industrial-edge-device)
-  - [Testing the application using Simatic Flow Creator](#testing-the-application-using-simatic-flow-creator)
+  - [Testing the application using Flow Creator](#testing-the-application-using-flow-creator)
 
 ## Build application
 
@@ -22,7 +22,7 @@ Download or clone the repository source code to your workstation.
 
 * Trough terminal:
 ```bash
-git clone https://github.com/industrial-edge/hello-world.git
+git clone https://github.com/industrial-edge/pingpong-python.git
 ```
 
 * Trough VSCode:  
@@ -77,24 +77,26 @@ To create a configuration for the application follow these steps:
 - Open the "Applications" -> "My Projects" Tab in the Industrial Edge Management web interface
 - Click on your PingPong application
 - Click on "Configurations" and "Add Configuration"
+![Add new configuration](./graphics/add_config_file.png)
 - Enter a Name and Description. Enter `./cfg-data` as host path. Check the "versioned" Checkbox and click "Add"
+![Add new configuration](./graphics/add_config_file_parameters.png)
 - Click on the "+" Button to add a new version of the configuration
+![Add new configuration](./graphics/add_config_file_version.png)
 - Enter a Name and Description. Browse for the `mqtt-config.json` file in the `cfg-data` folder of this repository.
+![Add new configuration](./graphics/add_config_file_version_details.png)
 - Click on the pencil button next to the version to verify that all parameters are set correctly.
 
-![Add new configuration](./graphics/pythonpingpong-new-configuration.gif)
 
 ### Configuring the Industrial Edge Databus
 
 To be able to authenticate with the databus to publish and subscribe to the configured topics, the Industrial Edge Databus has to be configured appropriately.
 
-- In the Industrial Edge Management Web interface, click on "My Installed Apps" and select the Databus
-- Click on "Update Configuration", select the corresponding Industrial Edge Device and click "Launch Configurator"
-- Create a new user with the username and password defined for the pingpong application
-- Create the topics needed by the pingpong application and give the user publish and subscribe permission
+- In the Industrial Edge Management Web interface, click on "Data Connections", select the Databus and choose the corresponding Industrial Edge device where the pingpong app is installed
+- Create a new user with the username, password, and put topic as "topic1" as defined for the pingpong application
+![IE databus configuration](./graphics/databus_config_initial.png)
+- Create the second topic needed by the pingpong application "topic2" by clicking on the + button beside "Topics" and give the user publish and subscribe permission
+![IE databus configuration](./graphics/databus_config_topic2.png)
 - Deploy the databus configuration and wait for the job to be finished successfully
-
-![IE databus configuration](./graphics/ie-databus-config.gif)
 
 ### Installing the application to a Industrial Edge Device
 
@@ -108,13 +110,13 @@ Industrial Edge Management Web interface:
 - Select the corresponding Industrial Edge Device
 - Click "Install Now" and wait for the job to be finished successfully
 
-![Deploy App to IE Device](./graphics/pythonpingpong-deploy-app-to-ied.gif)
+![Deploy App to IE Device](./graphics/deploy_to_edge_device.png)
 
-When the pingpong application is deployed and running on the Industrial Edge Device, it can be tested using the Simatic Flow Creator.
+When the pingpong application is deployed and running on the Industrial Edge Device, it can be tested using the Flow Creator.
 
-## Testing the application using Simatic Flow Creator
+## Testing the application using Flow Creator
 
-- Open the web interface of the Simatic Flow Creator
+- Open the web interface of the Flow Creator
 - Connect a "inject" node with a "mqtt out" node
 - Connect a "mqtt in" node with a "debug" node
 - Configure the mqtt-nodes to connect to the databus. Enter the hostname, username and password
@@ -123,4 +125,4 @@ When the pingpong application is deployed and running on the Industrial Edge Dev
 
 The finished flow is available [here](./src/SFC-flows/Pingpong-testing.json) and can be imported into the simatic flow creator.
 
-![PingPong test in Simatic Flow Creator](./graphics/pingpong-flowcreator.gif)
+![PingPong test in Simatic Flow Creator](./graphics/pingpong-flowcreator.png)
