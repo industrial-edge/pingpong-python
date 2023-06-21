@@ -67,9 +67,9 @@ This application version 1.1.x was created and tested using these components
 ### Further requirements
 
 - IE Device is onboarded to a IE Management
-- IE Databus Configurator is deployed to the IE Management
-- IE Databus is deployed to the IE Device
-- IE Flow Creator is deployed to the IE Device
+- Databus Configurator is deployed to the IE Management
+- Databus is deployed to the IE Device
+- Flow Creator is deployed to the IE Device
 
 ## Installation
 
