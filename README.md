@@ -16,14 +16,10 @@ C : https://github.com/industrial-edge/pingpong-c
   - [Description](#description)
     - [Overview](#overview)
   - [Requirements](#requirements)
+    - [Prerequisites](#prerequisites)
     - [Used components](#used-components)
-    - [Further requirements](#further-requirements)
   - [Installation](#installation)
-    - [Direct Import steps](#direct-import-steps)
-    - [Complete Installation](#complete-installation)
   - [Usage](#usage)
-    - [Dependencies](#dependencies)
-    - [Playing ping pong](#playing-ping-pong)
   - [Documentation](#documentation)
   - [Contribution](#contribution)
   - [License and Legal Information](#license-and-legal-information)
@@ -78,14 +74,6 @@ Please refer to the [Installation](https://github.com/industrial-edge/pingpong-c
 - [Create configuration for the application](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#create-configuration-for-the-application)
 - [Upload the application to the Industrial Edge Management](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#upload-the-application-to-the-industrial-edge-management)
 - [Configuring and deploying the application to a Industrial Edge Device](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#configuring-and-deploying-the-application-to-a-industrial-edge-device)
-
-### Direct Import steps
-
-1. Import .app application available at [GitHub](https://github.com/industrial-edge/ping-pong-python/releases) to your Industrial Edge Management using one of the two options
-   1. Industrial Edge App Publisher (recommended)
-   2. Catalog import functionality
-2. Install the imported app to onboarded Industrial Edge Device
-3. Follow the configuration steps in [Installation guide](docs/Installation.md).
 
 ### Complete Installation
 
