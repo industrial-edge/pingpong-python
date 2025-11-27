@@ -16,14 +16,10 @@ C : https://github.com/industrial-edge/pingpong-c
   - [Description](#description)
     - [Overview](#overview)
   - [Requirements](#requirements)
+    - [Prerequisites](#prerequisites)
     - [Used components](#used-components)
-    - [Further requirements](#further-requirements)
   - [Installation](#installation)
-    - [Direct Import steps](#direct-import-steps)
-    - [Complete Installation](#complete-installation)
   - [Usage](#usage)
-    - [Dependencies](#dependencies)
-    - [Playing ping pong](#playing-ping-pong)
   - [Documentation](#documentation)
   - [Contribution](#contribution)
   - [License and Legal Information](#license-and-legal-information)
@@ -51,37 +47,33 @@ A picture bellow shows the application data flow and architecture from the docke
 
 ## Requirements
 
+###  Prerequisites
+
+- Access to an Industrial Edge Management (IEM) with onboarded Industrial Edge Device (IED)
+- IEM: Installed apps: Databus Configurator
+- IED: Installed apps: Databus, Flow Creator
+
 ### Used components
 
-This application version 1.1.x was created and tested using these components
-
-- Industrial Edge App Publisher V1.10.5
-- Docker Engine 20.10.2
+- Industrial Edge Management (IEM) V2.6.1-4 / V1.15.9
+  - Databus Configurator V3.2.3
+- Industrial Edge Virtual Device (IED) V1.24.1-1b
+  - Databus V3.2.3
+  - Flow Creator V 1.19.2
+- Industrial Edge App Publisher V1.23.5
+- Docker Engine V29.0.1
 - Docker Compose V2.4
-- Industrial Edge Device V1.10.0-9
-- Databus Configurator V2.0.0-5
-- Databus V2.0.0-4
-- Flow Creator V1.12.0-1
-- IE Management System V1.5.2-4
-
-### Further requirements
-
-- IE Device is onboarded to a IE Management
-- Databus Configurator is deployed to the IE Management
-- Databus is deployed to the IE Device
-- Flow Creator is deployed to the IE Device
+- Web browser (Chrome)
 
 ## Installation
 
-You have two options how to install this app into Industrial Edge Management system. You can either use the [Direct Import section](#direct-import) to reuse .app we build for you or you can follow the [Complete Installation](#complete-installation) section to create the .app yourself.
+Please refer to the [Installation](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#installation) section of the *Ping Pong in C#* repository on how to build and deploy the application to an IED. Just use the source files from this repository and follow the instructions.
 
-### Direct Import steps
-
-1. Import .app application available at [GitHub](https://github.com/industrial-edge/ping-pong-python/releases) to your Industrial Edge Management using one of the two options
-   1. Industrial Edge App Publisher (recommended)
-   2. Catalog import functionality
-2. Install the imported app to onboarded Industrial Edge Device
-3. Follow the configuration steps in [Installation guide](docs/Installation.md).
+- [Build application](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#build-application)
+- [Configuring the Industrial Edge Databus](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#configuring-the-industrial-edge-databus)
+- [Create configuration for the application](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#create-configuration-for-the-application)
+- [Upload the application to the Industrial Edge Management](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#upload-the-application-to-the-industrial-edge-management)
+- [Configuring and deploying the application to a Industrial Edge Device](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#configuring-and-deploying-the-application-to-a-industrial-edge-device)
 
 ### Complete Installation
 
@@ -89,18 +81,20 @@ Comprehensive instructions for building and installing this application is avail
 
 ## Usage
 
-### Dependencies
+Once the application is successfully deployed to the IED, it can be tested using the Flow Creator.
 
-In order for this application to run properly on Industrial Edge Device (IED), the following two applications must be installed and configured on the IED
+On the IED restart the PingPong application, to ensure the right configuration is used. Then open the app Flow Creator and set it up as following:
 
-- Databus application
-- Flow Creator application
+- Connect an "inject" node with a "mqtt out" node
+- Connect a "mqtt in" node with a "debug" node
+- Configure the mqtt-nodes to connect to the databus (mqtt broker, username, password)
+- Set the topics of the mqtt-nodes according to the configuration of the application (here: "topic1" to publish to, "topic2" to subscribe to)
 
-For detailed explanation have a look in the [Installation guide](docs/Installation.md) in the Testing section.
+Deploy the flow and test by injecting a string payload into the mqtt in node. If the string is "Ping", the application will answer with "Pong". If the string is "Pong" the application will answer with "Ping".
 
-### Playing ping pong
+The finished flow is available [here](SFC-flows/Pingpong-testing.json) and can be imported into the Flow Creator.
 
-Have a look in the [Installation guide testing section](docs/Installation.md) on how to play ping pong in Industrial Edge. :D
+![Flow Creator](docs/graphics/FlowCreator.png)
 
 ## Documentation
  
@@ -109,7 +103,7 @@ Have a look in the [Installation guide testing section](docs/Installation.md) on
   - [Industrial Edge Forum](https://forum.mendix.com/link/space/industrial-edge)
   - [Industrial Edge landing page](https://new.siemens.com/global/en/products/automation/topic-areas/industrial-edge/simatic-edge.html)
   - [Industrial Edge GitHub page](https://github.com/industrial-edge)
-  - [Industrial Edge documentation page](https://docs.eu1.edge.siemens.cloud/index.html)
+  - [Industrial Edge documentation page](https://docs.industrial-operations-x.siemens.cloud/p/industrial-edge)
   
 ## Contribution
 
@@ -127,3 +121,4 @@ Please read the [Legal information](LICENSE.txt).
 IMPORTANT - PLEASE READ CAREFULLY:
 
 This documentation describes how you can download and set up containers which consist of or contain third-party software. By following this documentation you agree that using such third-party software is done at your own discretion and risk. No advice or information, whether oral or written, obtained by you from us or from this documentation shall create any warranty for the third-party software. Additionally, by following these descriptions or using the contents of this documentation, you agree that you are responsible for complying with all third party licenses applicable to such third-party software. All product names, logos, and brands are property of their respective owners. All third-party company, product and service names used in this documentation are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.
+
