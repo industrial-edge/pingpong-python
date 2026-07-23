@@ -2,14 +2,7 @@
 
 Application example how to communicate over MQTT broker (called Databus in case of Industrial Edge) using Flow Creator and Python.
 
-There are also implementations in other programming languages, you can find them in their own repositories:
-
-Javascript : https://github.com/industrial-edge/pingpong-nodejs
-
-C : https://github.com/industrial-edge/pingpong-c
-
 ---
-
 
 - [Ping Pong Edge application implemented in Python](#ping-pong-edge-application-implemented-in-python)
   - [QuickStart](#quickstart)
