@@ -24,7 +24,7 @@ services:
             - proxy-redirect
 
     nodered:
-        image: nodered/node-red
+        image: nodered/node-red:4.1
         ports: 
             - 1880:1880
         networks:
